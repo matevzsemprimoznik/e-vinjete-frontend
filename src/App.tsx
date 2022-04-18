@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from './components/Navigation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import 'primereact/resources/themes/vela-blue/theme.css'; //theme
+import 'primereact/resources/themes/bootstrap4-light-blue/theme.css'; //theme
 import 'primereact/resources/primereact.min.css'; //core css
 import 'primeicons/primeicons.css';
 import { Paths } from './routes';

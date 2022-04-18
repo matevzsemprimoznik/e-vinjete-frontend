@@ -1,7 +1,7 @@
 export interface Vignette {
   id: number;
   naziv: string;
-  tipVinjete: VehicleType;
+  tipVozila: VehicleType;
   veljavnost: number;
 }
 
