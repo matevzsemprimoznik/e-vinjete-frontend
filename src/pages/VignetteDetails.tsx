@@ -1,6 +1,8 @@
+import { Button } from 'primereact/button';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { Paths } from '../routes';
 import { getVignetteByIdAsync } from '../services/VignettesService';
 import {
   getVignetteById,
@@ -35,6 +37,11 @@ const VignetteDetails = () => {
                 </div>
               );
           })}
+      </div>
+      <div style={{ display: 'flex' }}>
+        <Button>
+          <Link to={`${Paths.ADD_VIGNETTE}/${currentVignette?.id}`}>Uredi</Link>
+        </Button>
       </div>
     </div>
   );

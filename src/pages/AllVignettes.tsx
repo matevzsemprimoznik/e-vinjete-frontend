@@ -10,6 +10,9 @@ import { vignettesSelector } from '../store/features/vignetteSlice';
 import { useAppDispatch } from '../store/hooks';
 import { Vignette } from '../store/models/Vignette';
 import { Button } from 'primereact/button';
+import { DataTableRowClickEventParams } from 'primereact/datatable';
+import { useNavigate } from 'react-router-dom';
+import { Paths } from '../routes';
 
 const headers: CustomDataTableHeader<Vignette>[] = [
   {
@@ -26,19 +29,18 @@ const headers: CustomDataTableHeader<Vignette>[] = [
   },
 ];
 
-const additionalColumns: ColumnBodyType[] = [
-  <Button label='Podrobnosti' className='p-button-info p-button-outlined' />,
-  <Button label='Uredi' className='p-button-info' />,
-  <Button label='Izbrisi' className='p-button-danger' />,
-];
-
 const AllVignettes = () => {
+  let navigate = useNavigate();
   const { vignettes } = useSelector(vignettesSelector);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getVignettesAsync());
   }, []);
+
+  const onRowClick = (event: DataTableRowClickEventParams) => {
+    navigate(`${Paths.VIGNETTE}/${event.data.id}`);
+  };
 
   console.log(vignettes);
 
@@ -47,7 +49,7 @@ const AllVignettes = () => {
       <CustomDataTable
         data={vignettes}
         headers={headers}
-        additionalColumns={additionalColumns}
+        onRowClick={onRowClick}
       />
     </div>
   );

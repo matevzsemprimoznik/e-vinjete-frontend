@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { useForm } from 'react-hook-form';
 import { VehicleType, Vignette } from '../store/models/Vignette';
@@ -6,15 +6,31 @@ import { Button } from 'primereact/button';
 import { InputNumber } from 'primereact/inputnumber';
 import { Dropdown } from 'primereact/dropdown';
 import { useAppDispatch } from '../store/hooks';
-import { addVignetteAsync } from '../services/VignettesService';
+import {
+  addVignetteAsync,
+  getVignetteByIdAsync,
+} from '../services/VignettesService';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { vignettesSelector } from '../store/features/vignetteSlice';
 
 const AddVignette = () => {
+  const { currentVignette } = useSelector(vignettesSelector);
   const dispatch = useAppDispatch();
+  const { id } = useParams();
+
   const { register, handleSubmit, watch } = useForm<Vignette>({
-    defaultValues: {
-      tipVozila: VehicleType.ENOSLEDNA,
-    },
+    defaultValues:
+      id && currentVignette
+        ? currentVignette
+        : {
+            tipVozila: VehicleType.ENOSLEDNA,
+          },
   });
+
+  useEffect(() => {
+    if (id != null) dispatch(getVignetteByIdAsync(id));
+  }, []);
 
   const onSubmit = handleSubmit((data) => {
     dispatch(addVignetteAsync(data));

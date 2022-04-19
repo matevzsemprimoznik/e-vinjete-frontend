@@ -1,4 +1,4 @@
-import { DataTable } from 'primereact/datatable';
+import { DataTable, DataTableRowClickEventParams } from 'primereact/datatable';
 import { Column, ColumnBodyType } from 'primereact/column';
 
 export interface CustomDataTableHeader<T> {
@@ -9,25 +9,22 @@ export interface CustomDataTableHeader<T> {
 interface CustomDataTableProps<T> {
   headers: CustomDataTableHeader<T>[];
   data: T[];
-  additionalColumns: ColumnBodyType[];
+  onRowClick: (event: DataTableRowClickEventParams) => void;
 }
 
 const CustomDataTable = <T extends unknown>({
   data,
   headers,
-  additionalColumns,
+  onRowClick,
 }: CustomDataTableProps<T>) => {
   return (
-    <DataTable value={data}>
+    <DataTable value={data} onRowClick={(event) => onRowClick(event)}>
       {headers.map((header: CustomDataTableHeader<T>) => (
         <Column
           key={`${header.accessor}`}
           field={`${header.accessor}`}
           header={header.label}
         />
-      ))}
-      {additionalColumns.map((column) => (
-        <Column field='' header='' key={0} body={column} />
       ))}
     </DataTable>
   );

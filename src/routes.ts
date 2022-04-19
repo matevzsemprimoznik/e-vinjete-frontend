@@ -1,7 +1,7 @@
 export enum Paths {
   'HOME' = '/',
   'ALL_VIGNETTES' = '/all-vignettes',
-  'VIGNETTE' = '/vignette/:id',
+  'VIGNETTE' = '/vignette',
   'ADD_VIGNETTE' = '/add-vignettes',
   'ALL_PURCHASES' = '/all-purchases',
   'ADD_PURCHASE' = '/add-purchase',

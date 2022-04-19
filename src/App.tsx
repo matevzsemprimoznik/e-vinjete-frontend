@@ -22,8 +22,8 @@ function App() {
         <Routes>
           <Route path={Paths.HOME} element={<Home />} />
           <Route path={Paths.ALL_VIGNETTES} element={<AllVignettes />} />
-          <Route path={Paths.VIGNETTE} element={<VignetteDetails />} />
-          <Route path={Paths.ADD_VIGNETTE} element={<AddVignette />} />
+          <Route path={Paths.VIGNETTE + '/:id'} element={<VignetteDetails />} />
+          <Route path={Paths.ADD_VIGNETTE + '/:id'} element={<AddVignette />} />
           <Route path={Paths.ALL_PURCHASES} element={<AllPurchases />} />
           <Route path={Paths.ADD_PURCHASE} element={<AddPurchase />} />
           <Route
