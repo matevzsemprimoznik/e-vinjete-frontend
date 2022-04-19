@@ -12,6 +12,7 @@ import AddVignette from './pages/AddVignette';
 import AllPurchases from './pages/AllPurchases';
 import AddPurchase from './pages/AddPurchase';
 import VignetteValidation from './pages/VignetteValidation';
+import VignetteDetails from './pages/VignetteDetails';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path={Paths.HOME} element={<Home />} />
           <Route path={Paths.ALL_VIGNETTES} element={<AllVignettes />} />
+          <Route path={Paths.VIGNETTE} element={<VignetteDetails />} />
           <Route path={Paths.ADD_VIGNETTE} element={<AddVignette />} />
           <Route path={Paths.ALL_PURCHASES} element={<AllPurchases />} />
           <Route path={Paths.ADD_PURCHASE} element={<AddPurchase />} />

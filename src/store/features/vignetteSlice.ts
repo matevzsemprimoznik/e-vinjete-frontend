@@ -3,7 +3,7 @@ import { Vignette } from '../models/Vignette';
 
 export interface VignetteState {
   vignettes: Vignette[];
-  currentVignette: Vignette[] | null;
+  currentVignette: Vignette | null;
 }
 
 const initialState: VignetteState = {
@@ -21,10 +21,14 @@ export const vignetteSlice = createSlice({
     addVignette: (state, action) => {
       state.currentVignette = action.payload;
     },
+    getVignetteById: (state, action) => {
+      state.currentVignette = action.payload;
+    },
   },
 });
 
-export const { getVignettes, addVignette } = vignetteSlice.actions;
+export const { getVignettes, addVignette, getVignetteById } =
+  vignetteSlice.actions;
 export const vignettesSelector = (state: { vignetteStore: VignetteState }) =>
   state.vignetteStore;
 export default vignetteSlice.reducer;
