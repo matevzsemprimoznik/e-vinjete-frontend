@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import { DataTable } from 'primereact/datatable';
 import { Column, ColumnBodyType } from 'primereact/column';
 

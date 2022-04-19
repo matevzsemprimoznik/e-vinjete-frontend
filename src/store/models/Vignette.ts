@@ -5,8 +5,8 @@ export interface Vignette {
   veljavnost: number;
 }
 
-enum VehicleType {
-  ENOSLEDNA,
-  DVOSLEDNA,
-  VELIKA_DVOSLEDNA,
+export enum VehicleType {
+  ENOSLEDNA = 'ENOSLEDNA',
+  DVOSLEDNA = 'DVOSLEDNA',
+  VELIKA_DVOSLEDNA = 'VELIKA_DVOSLEDNA',
 }

@@ -18,10 +18,13 @@ export const vignetteSlice = createSlice({
     getVignettes: (state, action) => {
       state.vignettes = action.payload;
     },
+    addVignette: (state, action) => {
+      state.currentVignette = action.payload;
+    },
   },
 });
 
-export const { getVignettes } = vignetteSlice.actions;
+export const { getVignettes, addVignette } = vignetteSlice.actions;
 export const vignettesSelector = (state: { vignetteStore: VignetteState }) =>
   state.vignetteStore;
 export default vignetteSlice.reducer;
