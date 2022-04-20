@@ -6,10 +6,10 @@ import {
   getVignettes,
 } from '../store/features/vignetteSlice';
 import { Vignette } from '../store/models/Vignette';
-import { AppThunk } from '../store/store';
+import { VignetteThunk } from '../store/store';
 import { vignettesApi } from './axios';
 
-export const getVignettesAsync = (): AppThunk => async (dispatch) => {
+export const getVignettesAsync = (): VignetteThunk => async (dispatch) => {
   try {
     const response = await vignettesApi.get('/');
     console.log(response);
@@ -21,7 +21,7 @@ export const getVignettesAsync = (): AppThunk => async (dispatch) => {
 };
 
 export const addVignetteAsync =
-  (vignette: Vignette): AppThunk =>
+  (vignette: Vignette): VignetteThunk =>
   async (dispatch) => {
     try {
       const response = await vignettesApi.post('/', vignette);
@@ -33,7 +33,7 @@ export const addVignetteAsync =
     }
   };
 export const getVignetteByIdAsync =
-  (id: string): AppThunk =>
+  (id: string): VignetteThunk =>
   async (dispatch) => {
     try {
       const response = await vignettesApi.get(`/${id}`);

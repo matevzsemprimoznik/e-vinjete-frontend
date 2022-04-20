@@ -10,7 +10,7 @@ export const vignettesApi = Axios.create({
 });
 
 export const purchasesApi = Axios.create({
-  baseURL: process.env.PURCHASES_URI,
+  baseURL: process.env.REACT_APP_PURCHASES_URI,
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
