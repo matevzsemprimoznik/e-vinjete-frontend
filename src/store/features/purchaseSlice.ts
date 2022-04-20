@@ -19,10 +19,13 @@ export const purchaseSlice = createSlice({
     getPurchases: (state, action) => {
       state.purchases = action.payload;
     },
+    getPurchaseById: (state, action) => {
+      state.currentPurchase = action.payload;
+    },
   },
 });
 
-export const { getPurchases } = purchaseSlice.actions;
+export const { getPurchases, getPurchaseById } = purchaseSlice.actions;
 export const purchasesSelector = (state: { purchaseStore: PurchaseState }) =>
   state.purchaseStore;
 export default purchaseSlice.reducer;

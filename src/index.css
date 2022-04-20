@@ -14,3 +14,7 @@ code {
 .p-menuitem-text {
   color: black !important;
 }
+a {
+  color: white;
+  text-decoration: none;
+}

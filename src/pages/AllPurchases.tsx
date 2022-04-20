@@ -40,6 +40,10 @@ const AllPurchases = () => {
     dispatch(getPurchasesAsync());
   }, []);
 
+  const onRowClick = (event: DataTableRowClickEventParams) => {
+    navigate(`${Paths.PURCHASE}/${event.data.id}`);
+  };
+
   console.log(purchases);
 
   return (
@@ -47,7 +51,7 @@ const AllPurchases = () => {
       <CustomDataTable
         data={purchases}
         headers={headers}
-        onRowClick={() => {}}
+        onRowClick={onRowClick}
       />
     </div>
   );
