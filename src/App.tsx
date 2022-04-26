@@ -8,9 +8,8 @@ import 'primeicons/primeicons.css';
 import { Paths } from './routes';
 import Home from './pages/Home';
 import AllVignettes from './pages/AllVignettes';
-import AddVignette from './pages/SaveVignette';
 import AllPurchases from './pages/AllPurchases';
-import AddPurchase from './pages/AddPurchase';
+import SavePurchase from './pages/SavePurchase';
 import VignetteValidation from './pages/VignetteValidation';
 import VignetteDetails from './pages/VignetteDetails';
 import PurchaseDetails from './pages/PurchaseDetails';
@@ -31,7 +30,7 @@ function App() {
           </Route>
           <Route path={Paths.PURCHASE + '/:id'} element={<PurchaseDetails />} />
           <Route path={Paths.ALL_PURCHASES} element={<AllPurchases />} />
-          <Route path={Paths.ADD_PURCHASE} element={<AddPurchase />} />
+          <Route path={Paths.SAVE_PURCHASE} element={<SavePurchase />} />
           <Route
             path={Paths.VIGNETTE_VALIDATION}
             element={<VignetteValidation />}

@@ -17,7 +17,7 @@ import { Calendar } from 'primereact/calendar';
 import { Button } from 'primereact/button';
 import { Vignette } from '../store/models/Vignette';
 
-const AddPurchase = () => {
+const SavePurchase = () => {
   const { currentPurchase } = useSelector(purchasesSelector);
   const { vignettes } = useSelector(vignettesSelector);
   const dispatch = useAppDispatch();
@@ -81,4 +81,4 @@ const AddPurchase = () => {
   );
 };
 
-export default AddPurchase;
+export default SavePurchase;

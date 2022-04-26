@@ -19,7 +19,7 @@ export const navigationItems = [
   },
   {
     label: 'Dodaj nakup',
-    url: Paths.ADD_PURCHASE,
+    url: Paths.SAVE_PURCHASE,
   },
   {
     label: 'Preveri veljavnost',

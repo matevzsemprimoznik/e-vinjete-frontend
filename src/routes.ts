@@ -4,7 +4,7 @@ export enum Paths {
   'VIGNETTE' = '/vignette',
   'SAVE_VIGNETTE' = '/save-vignettes',
   'ALL_PURCHASES' = '/all-purchases',
-  'ADD_PURCHASE' = '/add-purchase',
+  'SAVE_PURCHASE' = '/save-purchase',
   'PURCHASE' = '/purchase',
   'VIGNETTE_VALIDATION' = '/vignette-validation',
 }
