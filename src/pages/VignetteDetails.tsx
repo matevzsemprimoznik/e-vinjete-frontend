@@ -40,7 +40,9 @@ const VignetteDetails = () => {
       </div>
       <div style={{ display: 'flex' }}>
         <Button>
-          <Link to={`${Paths.ADD_VIGNETTE}/${currentVignette?.id}`}>Uredi</Link>
+          <Link to={`${Paths.SAVE_VIGNETTE}/${currentVignette?.id}`}>
+            Uredi
+          </Link>
         </Button>
       </div>
     </div>

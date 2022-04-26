@@ -11,7 +11,7 @@ export const navigationItems = [
   },
   {
     label: 'Dodaj vinjeto',
-    url: Paths.ADD_VIGNETTE,
+    url: Paths.SAVE_VIGNETTE,
   },
   {
     label: 'Vsi nakupi',
