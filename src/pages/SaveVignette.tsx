@@ -14,7 +14,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { vignettesSelector } from '../store/features/vignetteSlice';
 
-const AddVignette = () => {
+const SaveVignette = () => {
   const { currentVignette } = useSelector(vignettesSelector);
   const dispatch = useAppDispatch();
   const { id } = useParams();
@@ -56,4 +56,4 @@ const AddVignette = () => {
   );
 };
 
-export default AddVignette;
+export default SaveVignette;

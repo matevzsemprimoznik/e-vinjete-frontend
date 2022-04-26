@@ -8,7 +8,7 @@ import 'primeicons/primeicons.css';
 import { Paths } from './routes';
 import Home from './pages/Home';
 import AllVignettes from './pages/AllVignettes';
-import AddVignette from './pages/AddVignette';
+import AddVignette from './pages/SaveVignette';
 import AllPurchases from './pages/AllPurchases';
 import AddPurchase from './pages/AddPurchase';
 import VignetteValidation from './pages/VignetteValidation';
