@@ -36,7 +36,7 @@ const PurchaseDetails = () => {
       </div>
       <div style={{ display: 'flex' }}>
         <Button>
-          <Link to={`${Paths.ADD_VIGNETTE}/${currentPurchase?.id}`}>Uredi</Link>
+          <Link to={`${Paths.ADD_PURCHASE}/${currentPurchase?.id}`}>Uredi</Link>
         </Button>
       </div>
     </div>

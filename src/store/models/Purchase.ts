@@ -5,7 +5,7 @@ export interface Purchase {
   elektronskiNaslov: string;
   registrskaOznaka: string;
   vinjeta: Vignette;
-  datumNakupa: Date;
-  datumZacetkaVeljavnosti: Date;
+  datumNakupa: Date | string;
+  datumZacetkaVeljavnosti: Date | string;
   prodajalec: string;
 }
