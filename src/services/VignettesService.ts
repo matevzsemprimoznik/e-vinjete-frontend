@@ -44,3 +44,15 @@ export const getVignetteByIdAsync =
       console.log(err);
     }
   };
+
+export const deleteViggneteAsync =
+  (id: string): VignetteThunk =>
+  async (dispatch) => {
+    try {
+      const response = await vignettesApi.delete(`/${id}`);
+
+      dispatch(deleteViggneteAsync(response.data));
+    } catch (err) {
+      console.log(err);
+    }
+  };

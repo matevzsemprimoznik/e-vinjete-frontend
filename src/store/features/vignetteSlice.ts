@@ -24,10 +24,13 @@ export const vignetteSlice = createSlice({
     getVignetteById: (state, action) => {
       state.currentVignette = action.payload;
     },
+    deleteVignette: (state, action) => {
+      state.currentVignette = action.payload;
+    },
   },
 });
 
-export const { getVignettes, addVignette, getVignetteById } =
+export const { getVignettes, addVignette, getVignetteById, deleteVignette } =
   vignetteSlice.actions;
 export const vignettesSelector = (state: { vignetteStore: VignetteState }) =>
   state.vignetteStore;

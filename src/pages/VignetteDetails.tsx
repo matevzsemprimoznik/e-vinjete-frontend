@@ -3,7 +3,10 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { Paths } from '../routes';
-import { getVignetteByIdAsync } from '../services/VignettesService';
+import {
+  deleteViggneteAsync,
+  getVignetteByIdAsync,
+} from '../services/VignettesService';
 import {
   getVignetteById,
   vignettesSelector,
@@ -20,6 +23,10 @@ const VignetteDetails = () => {
   useEffect(() => {
     if (id) dispatch(getVignetteByIdAsync(id));
   }, []);
+
+  const deleteVignette = () => {
+    dispatch(deleteViggneteAsync(`${id}`));
+  };
 
   return (
     <div style={{ padding: '0 20px' }}>
@@ -44,6 +51,12 @@ const VignetteDetails = () => {
             Uredi
           </Link>
         </Button>
+        <Button
+          onClick={deleteVignette}
+          label='Izbriši'
+          className='p-button p-component p-button-danger'
+          style={{ marginLeft: '5px' }}
+        />
       </div>
     </div>
   );
