@@ -3,7 +3,10 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { Paths } from '../routes';
-import { getPurchaseByIdAsync } from '../services/PurchasesService';
+import {
+  deletePurchaseAsync,
+  getPurchaseByIdAsync,
+} from '../services/PurchasesService';
 import { purchasesSelector } from '../store/features/purchaseSlice';
 import { useAppDispatch } from '../store/hooks';
 import { Purchase } from '../store/models/Purchase';
@@ -17,6 +20,10 @@ const PurchaseDetails = () => {
   useEffect(() => {
     if (id) dispatch(getPurchaseByIdAsync(id));
   }, []);
+
+  const deletePurchase = () => {
+    dispatch(deletePurchaseAsync(`${id}`));
+  };
   return (
     <div style={{ padding: '0 20px' }}>
       <h2>{currentPurchase?.registrskaOznaka}</h2>
@@ -40,6 +47,12 @@ const PurchaseDetails = () => {
             Uredi
           </Link>
         </Button>
+        <Button
+          onClick={deletePurchase}
+          label='Izbriši'
+          className='p-button p-component p-button-danger'
+          style={{ marginLeft: '5px' }}
+        />
       </div>
     </div>
   );

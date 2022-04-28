@@ -28,9 +28,10 @@ export const purchaseSlice = createSlice({
       state.currentPurchase = action.payload;
     },
     setIsVignetteValid: (state, action) => {
-      console.log('aaa', action.payload);
-
       state.isVignetteValid = action.payload;
+    },
+    deletePurchase: (state, action) => {
+      state.currentPurchase = action.payload;
     },
   },
 });
@@ -40,6 +41,7 @@ export const {
   getPurchaseById,
   addPurchase,
   setIsVignetteValid,
+  deletePurchase,
 } = purchaseSlice.actions;
 export const purchasesSelector = (state: { purchaseStore: PurchaseState }) =>
   state.purchaseStore;

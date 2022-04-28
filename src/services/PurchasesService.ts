@@ -1,5 +1,6 @@
 import {
   addPurchase,
+  deletePurchase,
   getPurchaseById,
   getPurchases,
   setIsVignetteValid,
@@ -52,6 +53,17 @@ export const checkIfVignetteIsValid =
       console.log(response.data);
 
       dispatch(setIsVignetteValid(response.data));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+export const deletePurchaseAsync =
+  (id: string): PurchaseThunk =>
+  async (dispatch) => {
+    try {
+      const response = await purchasesApi.delete(`/${id}`);
+
+      dispatch(deletePurchase(response.data));
     } catch (err) {
       console.log(err);
     }
