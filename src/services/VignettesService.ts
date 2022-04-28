@@ -2,6 +2,7 @@ import { AnyAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 import {
   addVignette,
+  deleteVignette,
   getVignetteById,
   getVignettes,
 } from '../store/features/vignetteSlice';
@@ -51,7 +52,7 @@ export const deleteViggneteAsync =
     try {
       const response = await vignettesApi.delete(`/${id}`);
 
-      dispatch(deleteViggneteAsync(response.data));
+      dispatch(deleteVignette(response.data));
     } catch (err) {
       console.log(err);
     }
