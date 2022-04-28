@@ -23,7 +23,9 @@ const SavePurchase = () => {
   const dispatch = useAppDispatch();
   const { id } = useParams();
 
-  const { register, handleSubmit, watch } = useForm<Purchase>({});
+  const { register, handleSubmit, watch } = useForm<Purchase>({
+    defaultValues: currentPurchase || {},
+  });
 
   useEffect(() => {
     dispatch(getVignettesAsync());
@@ -31,16 +33,7 @@ const SavePurchase = () => {
   }, []);
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
-
-    dispatch(
-      addPurchaseAsync({
-        ...data,
-        datumZacetkaVeljavnosti: data.datumZacetkaVeljavnosti
-          .toString()
-          .substring(0, data.datumZacetkaVeljavnosti.toString().indexOf('T')),
-      })
-    );
+    dispatch(addPurchaseAsync(data));
   });
 
   return (

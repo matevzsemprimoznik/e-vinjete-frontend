@@ -30,7 +30,10 @@ function App() {
           </Route>
           <Route path={Paths.PURCHASE + '/:id'} element={<PurchaseDetails />} />
           <Route path={Paths.ALL_PURCHASES} element={<AllPurchases />} />
-          <Route path={Paths.SAVE_PURCHASE} element={<SavePurchase />} />
+          <Route path={Paths.SAVE_PURCHASE}>
+            <Route path=':id' element={<SavePurchase />} />
+            <Route path='' element={<SavePurchase />} />
+          </Route>
           <Route
             path={Paths.VIGNETTE_VALIDATION}
             element={<VignetteValidation />}
