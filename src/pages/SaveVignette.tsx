@@ -38,8 +38,17 @@ const SaveVignette = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form
+        onSubmit={onSubmit}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '20px',
+        }}
+      >
+        <label htmlFor='naziv'>Naziv</label>
         <InputText {...register('naziv')} />
+        <label htmlFor='tipVozila'>Tip vozila</label>
         <Dropdown
           value={watch('tipVozila') || 'ENOSLEDNA'}
           {...register('tipVozila')}
@@ -49,8 +58,9 @@ const SaveVignette = () => {
               return { label: key, value: key };
             })}
         />
+        <label htmlFor='veljavnost'>Veljavnost</label>
         <InputText {...register('veljavnost')} min={0} step={1} />
-        <Button label='Submit' />
+        <Button label='Submit' style={{ marginTop: '20px' }} />
       </form>
     </div>
   );
