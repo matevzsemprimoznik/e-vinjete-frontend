@@ -40,7 +40,7 @@ const SavePurchase = () => {
     <div>
       <form
         onSubmit={onSubmit}
-        style={{ display: 'flex', flexDirection: 'column' }}
+        style={{ display: 'flex', flexDirection: 'column', padding: '20px' }}
       >
         <label htmlFor='elektronskiNaslov'>Elektronski naslov</label>
         <InputText {...register('elektronskiNaslov')} />
@@ -68,7 +68,7 @@ const SavePurchase = () => {
         <Calendar {...register('datumZacetkaVeljavnosti')} />
         <label htmlFor='prodajalec'>Prodajalec</label>
         <InputText {...register('prodajalec')} />
-        <Button label='Submit' />
+        <Button label='Submit' style={{ marginTop: '20px' }} />
       </form>
     </div>
   );
